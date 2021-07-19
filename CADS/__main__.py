@@ -40,11 +40,6 @@ import pandas as pd
 import os
 import json
 
-
-#import platform
-#######################################
-#if platform.system()=="Linux" or platform.system()=="Windows":
-
 def main(args=None):
     
     window = Tk()
