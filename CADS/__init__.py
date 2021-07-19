@@ -1,12 +1,9 @@
 from xml.etree import cElementTree as ET
-import ftputil
 import os
 import datetime as dt
 import time
 import calendar
-import sys
 import math
-import subprocess
 import getpass
 
 
@@ -15,7 +12,7 @@ def download():
 
     # Main functions 
     
-    print("<ads4mo>  Copyright (C) <2018>  <Carmelo Sammarco>")
+    print("<CADS>  Copyright (C) <2021>  <Carmelo Sammarco>")
     print("This program comes with ABSOLUTELY NO WARRANTY")
     print("This is free software, and you are welcome to redistribute it under the GPLv3 conditions.")
 
