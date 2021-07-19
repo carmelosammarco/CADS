@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.com/carmelosammarco/CADS.png)](https://travis-ci.com/carmelosammarco/CADS) [![Build status](https://ci.appveyor.com/api/projects/status/qqy9y9iu1a473qk4?svg=true)](https://ci.appveyor.com/project/carmelosammarco/CADS) [![PyPi](https://img.shields.io/badge/PyPi-Project-yellow.svg)](https://pypi.org/project/CADS/) 
 
 <p align="center">
-  <img  src='DATA/Title_logo.png'>
+  <img src='DATA/Title_logo.png'>
 </p>
 
 ## Dependencies:
@@ -105,11 +105,11 @@ What you need to use as module's input:
 The results are going to be downloaded in the file path in which the terminal/command-prompt was at the moment of the data request. Below an example:
 
 <p align="center">
-  <img  src='https://i.imgur.com/R982Iaj.gif'>
+  <img width="" height="400" src='https://i.imgur.com/R982Iaj.gif'>
 </p>
 
 
-###  TAB-2: FTP data request
+### TAB-2: FTP data request
 
 This Tab, as for the previous one, allows to subset the Copernicus marine data products by bounding box, variables, depths /range of depths and time coverage. In addition it is requested the FTP link of the dataset (example: /Core/GLOBAL_REANALYSIS_PHY_001_025/global-reanalysis-phy-001-025-monthly/) which is the key value from which the tool is able to extract from an ad-hoc json database a series of information that allow to identify and correctly select the data prior the download. **At the moment I implemented the database just for the Multi-Year datasets)**. Here below a more detailed description of all the inputs requested:
 
@@ -124,7 +124,7 @@ This Tab, as for the previous one, allows to subset the Copernicus marine data p
 /Core/GLOBAL_REANALYSIS_PHY_001_025/global-reanalysis-phy-001-025-monthly/
 ```
 
-For more detailed information about the MULTI YEAR datasets please to look the [MY_datasets](assets/datasets_MY.pdf) file.
+For more detailed information about the MULTI YEAR datasets please to look the [MY_datasets](CADS/Database/datasets_MY.pdf) file. The Database that I implemented can be view from [HERE](CADS/Database/CMEMS_Database.json)
 
 3. **Time range**
 
@@ -147,7 +147,63 @@ Date format as YYYY-MM-DD also in the case of the MONTHLY dataset where the term
 
 Once all the empty and mandatory fields are populated then it is possible to click on the download button. The main python modules used are “ftplib” that make possible to connect into the Copernicus marine data server and then be able to download the data locally (The files are going to be downloaded in the same directory where the tool is run). All the analyses and data processing are performed mainly with xarray and  in real time (while the file or files are downloaded) which helps to preserve the file storage capabilities of the host pc. 
 
-It is possible **To use the program as a script** and then be able to be free in look/modify/customise the code please to:
+### TAB 3: FTP data request AVS (Automatic variables selection)
+
+This Tab is a prototype of a development that had the aim to make the user able in selecting the variables without type them manually but just selecting them on a screen.
+
+The input needed in this case are the following:
+
+1. **CMEMS personal login credential**
+
+- Username
+- Password
+
+2. **FTP Link of the dataset** Our key value to extract from the data-base all the parameters needed to make the Tool works. At the moment the only database avaiable to show that this prototype is working is the following:
+
+```
+/Core/BLKSEA_REANALYSIS_PHYS_007_004/sv04-bs-cmcc-cur-rean-m/
+```
+
+For more detailed information about the structure of this new Database please to refer to [CMEMS_Databaseselvar.json](CADS/Database/CMEMS_Databaseselvar.json) file. In summary can be pointed out that:
+
+Record example from [DATABASE of TAB-2](CADS/Database/CMEMS_Database.json):
+
+```
+"/Core/BLKSEA_REANALYSIS_PHYS_007_004/sv04-bs-cmcc-cur-rean-m/" : ["MY","M","FRONT","01_m-CMCC--RFVL-BSe2r2-BS-b"],
+```
+
+Record example from [DATABASE of TAB-3](CADS/Database/CMEMS_Databaseselvar.json):
+
+```
+"/Core/BLKSEA_REANALYSIS_PHYS_007_004/sv04-bs-cmcc-cur-rean-m/" : ["MY","M","FRONT","01_m-CMCC--RFVL-BSe2r2-BS-b",”1992-01-01”,”2018-11-01”, ”27.32”, “41.96”, “40.86”, “46.8”, “LDY”, “Variable1”, “Variable2”… ]
+ ```
+
+These modification will adress easily the check for:
+
+-Bounding box limits (W-E-S-N)
+
+-Variables selection
+
+-Level Depths (LDY/LDN)
+
+-Date range validation
+
+3. **Time range**
+
+- Date start
+- Date end
+
+Date format as YYYY-MM-DD also in the case of the MONTHLY dataset where the term "DD" can be set to any real value.
+
+4. **Geographic bounding box** (if interested to subset by geographic area)
+
+5. **Variables name** (It is possible to select the variables from a list using the "Get-Variables" button, to register the selection just click on "Set-Variables)
+
+6. **Depths** information parameter values (if interested in a SINGLE/RANGE  or all the depths)
+
+## Use the program as a script
+
+ It is possible use the FTP download functionalities in a pure scripting way which allow to be free in look/modify/customise the code. To do so please to:
 
 1. Open the Terminal/command_prompt in the location where you desire download the files or anyway have the script
 
