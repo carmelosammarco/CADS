@@ -54,6 +54,11 @@ I can summarise the workflow of this tab as follow:
   
 To do that just a click to the more appropriate methods (based on your needs) is required (by Depths, Days, Months, Months&Depths, Yearly (very usefull when requested just a grid point) or just as single file.
 
+![Imgur](https://i.imgur.com/7NsVoa8.png)
+![Imgur](https://i.imgur.com/OcKysIV.png)
+
 
 - TAB-2: FTP data request
+
+
 

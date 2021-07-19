@@ -55,8 +55,8 @@ def main(args=None):
     tab_control = ttk.Notebook(window)
     tab1 = ttk.Frame(tab_control)
     tab2 = ttk.Frame(tab_control)
-    tab_control.add(tab1, text='Motuclient request')
-    tab_control.add(tab2, text='FTP request')
+    tab_control.add(tab1, text='Motuclient data request')
+    tab_control.add(tab2, text='FTP data request')
 
     window.title("CADS-by-Carmelo-Sammarco")
     
