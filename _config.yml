@@ -1,7 +1,7 @@
 theme: jekyll-theme-minimal
 title: "CADS: Copernicus Added Download Services"
-email: sammarcocarmelo.com
+email: sammarcocarmelo@gmail.com
 description: > # this means to ignore newlines until "baseurl:"
   Python Package capable to add new download services to Copernicus and make easier manage voluminous data requests.
-logo: "/assets/logo.png"
+logo: "/DATA/logo.png"
 show_downloads: true
