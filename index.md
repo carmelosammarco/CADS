@@ -62,7 +62,9 @@ To do that just a click to the more appropriate methods (based on your needs) is
   <img width="" height="200" src='https://i.imgur.com/OcKysIVl.png'>
 </p>
 
-also is possible to run an interactive terminal session which reproduce what is already described and seen in the GUI interface. To activate this functionality do as descibed here below:
+#### **How to Run Interactive terminal session (instead of GUI)**:
+
+It is possible to run an interactive terminal session which reproduce what is already described and seen in the GUI interface. To activate this functionality do as descibed here below:
 
 ```
 from CADS import download
