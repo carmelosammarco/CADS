@@ -60,7 +60,7 @@ To do that just a click to the more appropriate methods (based on your needs) is
 also is possible to run an interactive terminal session which reproduce what is already described and seen in the GUI interface. To activate this functionality do as descibed here below:
 
 ```
-from ads4MO import download
+from CADS import download
 ```
 Once the module is imported we can call the interactive download process typing;
 
@@ -103,9 +103,58 @@ The results are going to be downloaded in the file path in which the terminal/co
   <img width="" height="380" src="DATA/FILE.gif">
 </p>
 
+**- TAB-2: FTP data request**
+
+This Tab, as for the previous one, allows to subset the Copernicus marine data products by bounding box, variables, depths /range of depths and time coverage. In addition it is requested the FTP link of the dataset (example: /Core/GLOBAL_REANALYSIS_PHY_001_025/global-reanalysis-phy-001-025-monthly/) which is the key value from which the tool is able to extract from an ad-hoc json database a series of information that allow to identify and correctly select the data prior the download. **At the moment I implemented the database just for the Multi-Year datasets)**. Here below a more detailed description of all the inputs requested:
+
+1. **CMEMS personal login credential**
+
+- Username
+- Password
+
+2. **FTP Link of the dataset** (Our key value to extract from the data-base all the parameters needed to make the Tool works) as example below:
+
+```
+/Core/GLOBAL_REANALYSIS_PHY_001_025/global-reanalysis-phy-001-025-monthly/
+```
+
+For more detailed information about the MULTI YEAR datasets please to look the [MY_datasets](FTPsubsetMO/Database/datasets_MY.pdf) file.
+
+3. **Time range**
+
+- Date start
+- Date end
+
+Date format as YYYY-MM-DD also in the case of the MONTHLY dataset where the term "DD" can be set to any real value.
 
 
-- TAB-2: FTP data request
+4. **Geographic bounding box** (if interested to subset by geographic area)
+
+5. **Variables name** (if interested in extract a selection rather than all)
+
+6. **Depths** information parameter values (if interested in a SINGLE/RANGE  or all the depths)
 
 
+
+![Imgur](https://i.imgur.com/OcKysIV.png)
+
+Once all the empty and mandatory fields are populated then it is possible to click on the download button. The main python modules used are “ftplib” that make possible to connect into the Copernicus marine data server and then be able to download the data locally (The files are going to be downloaded in the same directory where the tool is run). All the analyses and data processing are performed mainly with xarray and  in real time (while the file or files are downloaded) which helps to preserve the file storage capabilities of the host pc. 
+
+
+It is possible **To use the program as a script** and then be able to be free in look/modify/customise the code please to:
+
+1. Open the Terminal/command_prompt in the location where you desire download the files or anyway have the script
+
+2. Activate your python environment and import the module:
+
+```
+from FTPsubsetMO import script
+```
+3. Run the function "script" as follow: 
+
+```
+script()
+```
+
+The above function will allow you to add, in the path folder where you run the command, the files needed  to run the subsetting process in a pure scripting way. "FTPsubsetMO.py" is the only file to modify based on your data request needs. The script's inputs are highlighted with **""**. More information can be found as form of comments in FTPsubsetMO.py script.
 
