@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf8") as fh:
     long_description = fh.read()
 
 setup(name='CADS',
-      version='0.0.4',
+      version='0.0.5',
       description='Python Package to add new download services to Copernicus and make easier managing voluminous data requests.',
       long_description=long_description,
       long_description_content_type='text/markdown',
