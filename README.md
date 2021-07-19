@@ -3,7 +3,7 @@
 [![Build Status](https://travis-ci.com/carmelosammarco/CADS.png)](https://travis-ci.com/carmelosammarco/CADS) [![Build status](https://ci.appveyor.com/api/projects/status/qqy9y9iu1a473qk4?svg=true)](https://ci.appveyor.com/project/carmelosammarco/CADS) [![PyPi](https://img.shields.io/badge/PyPi-Project-yellow.svg)](https://pypi.org/project/CADS/) 
 
 <p align="center">
-  <img width="" height="200" src='CADS/DATA/LOGO.gif'>
+  <img width="600" height="200" src='CADS/DATA/LOGO.gif'>
 </p>
 
 ## Dependencies:
@@ -54,8 +54,13 @@ I can summarise the workflow of this tab as follow:
   
 To do that just a click to the more appropriate methods (based on your needs) is required (by Depths, Days, Months, Months&Depths, Yearly (very usefull when requested just a grid point) or just as single file.
 
-![Imgur](https://i.imgur.com/7NsVoa8.png)
-![Imgur](https://i.imgur.com/OcKysIV.png)
+
+<p align="center">
+  <img width="" height="900" src='https://i.imgur.com/fxIABmu.png'>
+</p>
+<p align="center">
+  <img width="" height="200" src='https://i.imgur.com/OcKysIVl.png'>
+</p>
 
 also is possible to run an interactive terminal session which reproduce what is already described and seen in the GUI interface. To activate this functionality do as descibed here below:
 
@@ -100,8 +105,9 @@ What you need to use as module's input:
 The results are going to be downloaded in the file path in which the terminal/command-prompt was at the moment of the data request. Below an example:
 
 <p align="center">
-  <img width="" height="380" src="DATA/FILE.gif">
+  <img width="" height="400" src='https://i.imgur.com/R982Iaj.gif'>
 </p>
+
 
 **- TAB-2: FTP data request**
 
@@ -118,7 +124,7 @@ This Tab, as for the previous one, allows to subset the Copernicus marine data p
 /Core/GLOBAL_REANALYSIS_PHY_001_025/global-reanalysis-phy-001-025-monthly/
 ```
 
-For more detailed information about the MULTI YEAR datasets please to look the [MY_datasets](FTPsubsetMO/Database/datasets_MY.pdf) file.
+For more detailed information about the MULTI YEAR datasets please to look the [MY_datasets](assets/datasets_MY.pdf) file.
 
 3. **Time range**
 
@@ -135,11 +141,11 @@ Date format as YYYY-MM-DD also in the case of the MONTHLY dataset where the term
 6. **Depths** information parameter values (if interested in a SINGLE/RANGE  or all the depths)
 
 
-
-![Imgur](https://i.imgur.com/OcKysIV.png)
+<p align="center">
+  <img width="" height="900" src='https://i.imgur.com/qRzr8GTl.png'>
+</p>
 
 Once all the empty and mandatory fields are populated then it is possible to click on the download button. The main python modules used are “ftplib” that make possible to connect into the Copernicus marine data server and then be able to download the data locally (The files are going to be downloaded in the same directory where the tool is run). All the analyses and data processing are performed mainly with xarray and  in real time (while the file or files are downloaded) which helps to preserve the file storage capabilities of the host pc. 
-
 
 It is possible **To use the program as a script** and then be able to be free in look/modify/customise the code please to:
 
@@ -150,6 +156,7 @@ It is possible **To use the program as a script** and then be able to be free in
 ```
 from FTPsubsetMO import script
 ```
+
 3. Run the function "script" as follow: 
 
 ```
@@ -160,11 +167,11 @@ The above function will allow you to add, in the path folder where you run the c
 
 ## Citing CADS
 
-If you use CADS, even a small part of it, for your research and publications, please consider citing it
+If you use CADS, even a small part of it, for your research and publications, please consider citing it.
 
 Thanks to all who already did so!
 
 
 ## Dislaimer & Aknoledgement:
 
-The Python tool that is presented here, first in its type inside the Copernicus framework, is a result of personal intellectual work and development, so as such I will not be held responsible for any use you make of it, nor for the results and conclusions you may find using them. Also although I have cross-checked the whole code, I cannot warranty it is exempt of bugs. I would strongly acknowledge the important contribution of the Copernicus scientific community, responsible to gave me the motivation in developing such python applicative. Also I thank Copernicus as the European Union's Earth observation programme and partners (European Space Agency-ESA, the European Organisation for the Exploitation of Meteorological Satellites - EUMETSAT, the European Centre for Medium-Range Weather Forecasts - ECMWF, EU Agencies and Mercator Océan) for the free and open data policy in support of tackling global challenges and providing opportunities for the European Earth observation community for creating jobs and growth. 
+The Python tool that is presented here, first in its type inside the Copernicus framework, is a result of personal intellectual work and development, so as such I will not be held responsible for any use you make of it, nor for the results and conclusions you may find using them. Also although I have cross-checked the whole code, I cannot warranty it is exempt of bugs. I would strongly acknowledge the important contribution of the Copernicus scientific community, responsible to gave me the motivation in developing such python applicative. Also I thank Copernicus as the European Union's Earth observation programme and partners (European Space Agency-ESA, the European Organisation for the Exploitation of Meteorological Satellites - EUMETSAT, the European Centre for Medium-Range Weather Forecasts - ECMWF, EU Agencies and Mercator Océan) for the free and open data policy in support of tackling global challenges and providing opportunities for the European Earth observation community for creating jobs and growth.
