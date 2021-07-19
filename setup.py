@@ -18,7 +18,7 @@ setup(name='CADS',
 
       include_package_data=True,
       package_data={
-        'CADS': ['DATA/LOGO.gif', 'Database/CMEMS_Database.json', 'Script/CMEMS_Database.json','Script/FTPsubsetMO.py','Database/datasets_MY.pdf']
+        'CADS': ['DATA/LOGO.gif', 'Database/CMEMS_Database.json', 'Database/datasets_MY.pdf','Script/CMEMS_Database.json','Script/FTPsubsetMO.py']
 
       },
 
