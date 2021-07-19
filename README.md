@@ -158,3 +158,13 @@ script()
 
 The above function will allow you to add, in the path folder where you run the command, the files needed  to run the subsetting process in a pure scripting way. "FTPsubsetMO.py" is the only file to modify based on your data request needs. The script's inputs are highlighted with **""**. More information can be found as form of comments in FTPsubsetMO.py script.
 
+## Citing CADS
+
+If you use CADS, even a small part of it, for your research and publications, please consider citing it
+
+Thanks to all who already did so!
+
+
+## Dislaimer & Aknoledgement:
+
+The Python tool that is presented here, first in its type inside the Copernicus framework, is a result of personal intellectual work and development, so as such I will not be held responsible for any use you make of it, nor for the results and conclusions you may find using them. Also although I have cross-checked the whole code, I cannot warranty it is exempt of bugs. I would strongly acknowledge the important contribution of the Copernicus scientific community, responsible to gave me the motivation in developing such python applicative. Also I thank Copernicus as the European Union's Earth observation programme and partners (European Space Agency-ESA, the European Organisation for the Exploitation of Meteorological Satellites - EUMETSAT, the European Centre for Medium-Range Weather Forecasts - ECMWF, EU Agencies and Mercator Océan) for the free and open data policy in support of tackling global challenges and providing opportunities for the European Earth observation community for creating jobs and growth. 
