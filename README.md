@@ -151,22 +151,19 @@ Once all the empty and mandatory fields are populated then it is possible to cli
 
 ### TAB 3: FTP data request AVS (Automatic variables selection)
 
-This Tab is a prototype of a development that had the aim to make the user able in selecting the variables without type them manually but just selecting them on a screen.
+This Tab is a prototype of a development that had the aim to make the user able in selecting the variables without type them manually but just selecting them on a screen. This version require the same types of input, the only difference is that the variables are not typed by hand but direcly selected on screen as follow:
 
-The input needed in this case are the following:
+<p align="center">
+  <img width="" height="900" src='https://i.imgur.com/BT3nL6X.png'>
+</p>
 
-1. **CMEMS personal login credential**
-
-- Username
-- Password
-
-2. **FTP Link of the dataset** Our key value to extract from the data-base all the parameters needed to make the Tool works. At the moment the only database avaiable to show that this prototype is working is the following:
+Also in this case the **FTP Link of the dataset** is the key value to extract from the data-base all the parameters needed to make the Tool works. At the moment the only database working is the following:
 
 ```
 /Core/BLKSEA_REANALYSIS_PHYS_007_004/sv04-bs-cmcc-cur-rean-m/
 ```
 
-For more detailed information about the structure of this new Database please to refer to [CMEMS_Databaseselvar.json](CADS/Database/CMEMS_Databaseselvar.json) file. In summary can be pointed out that:
+For more detailed information about the structure of this new data-base please to refer to [CMEMS_Databaseselvar.json](CADS/Database/CMEMS_Databaseselvar.json) file. In summary can be pointed out that:
 
 Record example from [DATABASE of TAB-2](CADS/Database/CMEMS_Database.json):
 
@@ -180,7 +177,7 @@ Record example from [DATABASE of TAB-3](CADS/Database/CMEMS_Databaseselvar.json)
 "/Core/BLKSEA_REANALYSIS_PHYS_007_004/sv04-bs-cmcc-cur-rean-m/" : ["MY","M","FRONT","01_m-CMCC--RFVL-BSe2r2-BS-b",”1992-01-01”,”2018-11-01”, ”27.32”, “41.96”, “40.86”, “46.8”, “LDY”, “Variable1”, “Variable2”… ]
  ```
 
-These modification will adress easily the check for:
+These modification will adress potentially the check for:
 
 -Bounding box limits (W-E-S-N)
 
@@ -189,19 +186,6 @@ These modification will adress easily the check for:
 -Level Depths (LDY/LDN)
 
 -Date range validation
-
-3. **Time range**
-
-- Date start
-- Date end
-
-Date format as YYYY-MM-DD also in the case of the MONTHLY dataset where the term "DD" can be set to any real value.
-
-4. **Geographic bounding box** (if interested to subset by geographic area)
-
-5. **Variables name** (It is possible to select the variables from a list using the "Get-Variables" button, to register the selection just click on "Set-Variables)
-
-6. **Depths** information parameter values (if interested in a SINGLE/RANGE  or all the depths)
 
 ## Use the program as a script
 
