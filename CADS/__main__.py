@@ -6240,8 +6240,6 @@ def main(args=None):
     space.grid(column=1, row=24)
     ###############################################################
 
-    print (Listvar)
-
     tab_control.pack(expand=1, fill='both')
 
     window.mainloop()
