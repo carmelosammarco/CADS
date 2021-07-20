@@ -6,7 +6,7 @@
   <img src='DATA/Title_logo.png'>
 </p>
 
-## Dependencies:
+## Dependencies
 
 The dependencies required are listed below:
 
@@ -27,7 +27,7 @@ pip install CADS
 
 When the installation is concluded, just type in the terminal "CADS",press the enter key and the application will pop up.
 
-## Functionalities:
+## Functionalities
 
 The program is divided into three tabs. The first tab is exslusively used by the **motuclient download mechanisms** while the second tab for the **FTP download data request**. The third tab it is just another experimental version of the **FTP download data request**   showing another way to handle variables and a different database structure. Here below a description of each TABS:
 
