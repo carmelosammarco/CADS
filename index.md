@@ -29,7 +29,7 @@ When the installation is concluded, just type in the terminal "CADS",press the e
 
 ## Functionalities:
 
-The program is divided into two tabs. The first tab is exslusively used by the **motuclient download mechanisms** while the second tab for the **FTP download data request**. For more information please to read [this article](). Here below a description of the two TABS:
+The program is divided into three tabs. The first tab is exslusively used by the **motuclient download mechanisms** while the second tab for the **FTP download data request**. The third tab it is just another experimental version of the **FTP download data request**   showing another way to handle variables and a different database structure. Here below a description of each TABS:
 
 ### TAB-1 : Motuclient data request
 
@@ -149,43 +149,41 @@ Date format as YYYY-MM-DD also in the case of the MONTHLY dataset where the term
 
 Once all the empty and mandatory fields are populated then it is possible to click on the download button. The main python modules used are “ftplib” that make possible to connect into the Copernicus marine data server and then be able to download the data locally (The files are going to be downloaded in the same directory where the tool is run). All the analyses and data processing are performed mainly with xarray and  in real time (while the file or files are downloaded) which helps to preserve the file storage capabilities of the host pc. 
 
-### TAB 3: FTP data request AVS (Automatic variables selection)
+### (EXPERIMENTAL) TAB 3: FTP data request AVS (Automatic Variables Selection)
 
-This Tab is a prototype of a development that had the aim to make the user able in selecting the variables without type them manually but just selecting them on a screen. This version require the same types of input, the only difference is that the variables are not typed by hand but direcly selected on screen as follow:
+This Tab is a prototype of a development that had the aim to make the user able in selecting the variables without type them manually but just selecting them on a screen. It was done because the variable name in the Copernicus web portal and the one stored in the netCDF file sometimes have different names, reason that brings lots of confusion to the user. This version require the same types of input, the only difference is that the variables are not typed by hand but direcly selected on screen as you can see below:
 
 <p align="center">
   <img width="" height="900" src='https://i.imgur.com/BT3nL6X.png'>
 </p>
 
-Also in this case the **FTP Link of the dataset** is the key value to extract from the data-base all the parameters needed to make the Tool works. At the moment the only database working is the following:
+Also in this case the **FTP Link of the dataset** is the key value to extract from the data-base all the parameters needed to make the Tool works. At the moment and because like I said it was a experimentation the only database working is the following:
 
 ```
 /Core/BLKSEA_REANALYSIS_PHYS_007_004/sv04-bs-cmcc-cur-rean-m/
 ```
 
-For more detailed information about the structure of this new data-base please to refer to [CMEMS_Databaseselvar.json](CADS/Database/CMEMS_Databaseselvar.json) file. In summary can be pointed out that:
+For more detailed information about the structure of this new data-base please to refer to [CMEMS_Databaseselvar.json](CADS/Database/CMEMS_Databaseselvar.json) file. Here below I will show you the same record in the two database created by me and relative to TAB-2 and the experimental TAB-3:
 
-Record example from [DATABASE of TAB-2](CADS/Database/CMEMS_Database.json):
+Record example from the source [DATABASE of TAB-2](CADS/Database/CMEMS_Database.json):
 
 ```
 "/Core/BLKSEA_REANALYSIS_PHYS_007_004/sv04-bs-cmcc-cur-rean-m/" : ["MY","M","FRONT","01_m-CMCC--RFVL-BSe2r2-BS-b"],
 ```
 
-Record example from [DATABASE of TAB-3](CADS/Database/CMEMS_Databaseselvar.json):
+Record example from the source [DATABASE of TAB-3](CADS/Database/CMEMS_Databaseselvar.json):
 
 ```
 "/Core/BLKSEA_REANALYSIS_PHYS_007_004/sv04-bs-cmcc-cur-rean-m/" : ["MY","M","FRONT","01_m-CMCC--RFVL-BSe2r2-BS-b",”1992-01-01”,”2018-11-01”, ”27.32”, “41.96”, “40.86”, “46.8”, “LDY”, “Variable1”, “Variable2”… ]
  ```
 
-These modification will adress potentially the check for:
+ It is possible to notice that the database of TAB-3 has more entries which potentially can be used to develop other type of development especially regarding the check of:
 
--Bounding box limits (W-E-S-N)
+-Bounding box limits (the order is: W-E-S-N)
 
--Variables selection
+-Level Depths (LDY)/LDN)
 
--Level Depths (LDY/LDN)
-
--Date range validation
+-Date time range validation
 
 ## Use the program as a script
 
