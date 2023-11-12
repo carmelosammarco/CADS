@@ -20,7 +20,8 @@
 #####################################################################
 
 #Import modules 
-import pkg_resources
+#import pkg_resources
+import importlib.resources
 from xml.etree import cElementTree as ET
 import xarray as xr
 import pandas as pd
@@ -46,7 +47,8 @@ def main(args=None):
     
     window = Tk()
 
-    image = pkg_resources.resource_filename('CADS', 'DATA/LOGO.gif')
+    #image = pkg_resources.resource_filename('CADS', 'DATA/LOGO.gif')
+    image = importlib.resources.files('CADS', 'DATA/LOGO.gif')
     photo = PhotoImage(file=image)
     w = photo.width()
     h = photo.height()
@@ -72,8 +74,9 @@ def main(args=None):
     # else:
     #     window.geometry('365x565')
     
-    filejason =  pkg_resources.resource_filename('CADS', 'Database/CMEMS_Database.json')
-    filejasonselvar =  pkg_resources.resource_filename('CADS', 'Database/CMEMS_Databaseselvar.json')
+    filejason =  importlib.resources.files('CADS', 'Database/CMEMS_Database.json')
+    #filejasonselvar =  pkg_resources.resource_filename('CADS', 'Database/CMEMS_Databaseselvar.json')
+    filejasonselvar =  importlib.resources.files('CADS', 'Database/CMEMS_Databaseselvar.json')
 
     
     #################
